@@ -1,0 +1,20 @@
+img {
+  position: relative;
+  z-index: 10;
+  top: -45px;
+  animation-duration: 10s;
+  animation-name: move;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes move {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: -195px;
+  }
+}

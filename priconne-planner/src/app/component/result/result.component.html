@@ -1,0 +1,11 @@
+<div class="frame">
+  <div class="equipment" *ngFor="let ingredient of calcSortedIngredients()">
+    <img src="{{ ingredient.equipment.getImageUrl() }}">
+    <div class="equipment-count">
+      <div>
+        <span>x{{ ingredient.count }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+

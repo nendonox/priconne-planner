@@ -1,0 +1,43 @@
+.frame {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 300px;
+  overflow-x: auto;
+}
+
+img {
+  border-radius: 10px;
+  width: 114px;
+}
+
+.equipment {
+  padding: 0 4px 4px 0;
+}
+
+.equipment-count {
+  position: relative;
+  font-weight: bold;
+  color: ghostwhite;
+  background: #000;
+  height: 0;
+  top: -32px;
+  margin-right: 2px;
+}
+
+.equipment-count > div {
+  height: 28px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.equipment-count > div > span {
+  background: #333;
+  color: white;
+  opacity: 0.9;
+  border: solid 1px #ccf;
+  border-radius: 4px;
+  font-weight: bold;
+  line-height: 26px;
+  padding: 0 6px;
+}
+

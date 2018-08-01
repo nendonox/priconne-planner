@@ -1,0 +1,30 @@
+
+<div class="frame">
+  <div class="character">
+    <img
+       src="{{ characterSettings.character.getImageUrl() }}"
+       (click)="toggleEnabled()"
+       [ngClass]="{ 'img-disabled': !characterSettings.enabled }">
+    <div class="character-tools">
+      <div class="character-tools-border">
+      <div class="character-tools-border-inner">
+        <span class="rank" *ngIf="characterSettings.rank < 9">Rank {{ characterSettings.rank + 1 }}</span>
+        <span class="rank" *ngIf="characterSettings.rank >= 9">Rank{{ characterSettings.rank + 1 }}</span>
+      <i class="material-icons" (click)="rankUpFull()">vertical_align_top</i>
+      <i class="material-icons" (click)="rankUp()">arrow_upward</i>
+      <i class="material-icons" (click)="rankDown()">arrow_downward</i>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="equipments">
+    <img
+       *ngFor="let i of [0,1,2,3,4,5]"
+       class="equipment-small"
+       src="{{ getEquipmentByIndex(i).getImageUrl() }}"
+       (click)="toggleEnabledEquipment(i)"
+       [ngClass]="{ 'img-disabled': !characterSettings.enabledEquipments[i],
+                    'img-enabled': characterSettings.enabled }">
+    <div class="character-tools">
+  </div>
+</div>

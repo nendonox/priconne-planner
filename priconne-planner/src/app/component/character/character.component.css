@@ -1,0 +1,78 @@
+.frame {
+  margin: 0 8px 8px 0;
+  padding: 4px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  background: #eee;
+}
+
+.character img {
+  width: 126px;
+  height: 126px;
+  cursor: pointer;
+}
+
+.character i {
+  border-radius: 4px;
+  border: solid 1px #eee;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 22px;
+  color: white;
+  background: #358;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.character-tools {
+  position: relative;
+  top: -28px;
+  height: 0px;
+}
+
+.character-tools-border {
+  background: rgba(0,0,0,0.3);
+  border-radius: 4px;
+  height: 28px;
+}
+
+.character-tools-border-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.rank {
+  background: #336;
+  color: white;
+  opacity: 0.9;
+  border: solid 1px #ccf;
+  border-radius: 4px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.equipments {
+  width: 126px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.equipments img {
+  margin: 1px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.img-disabled {
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+
+.img-enabled {
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #04f;
+}
+
