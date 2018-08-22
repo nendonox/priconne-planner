@@ -7,12 +7,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 })
 export class KyaruchangComponent implements OnInit {
 
-  x = 0
-  y = 0
+  moving = false
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggle() {
+    this.moving = !this.moving
   }
 
 }

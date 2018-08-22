@@ -1,20 +1,38 @@
-img {
+.wrapper {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  overflow: visible;
+  z-index: 20;
+}
+
+.stop {
   position: relative;
-  z-index: 10;
-  top: -45px;
+  top: -150px;
+  left: 99%;
+  transform: translateX(-100%);
+  cursor: pointer;
+}
+
+.move {
+  position: relative;
+  top: -150px;
+  cursor: pointer;
   animation-duration: 10s;
-  animation-name: move;
+  animation-name: move-keyframes;
   animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  transform: translate3d(-100%,0,0);
 }
 
-@keyframes move {
+@keyframes move-keyframes {
   from {
-    left: 100%;
+   left: 99%;
   }
 
   to {
-    left: -195px;
+    left: 10%;
   }
 }

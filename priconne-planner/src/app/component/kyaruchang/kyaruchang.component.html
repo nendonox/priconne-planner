@@ -1,1 +1,3 @@
-<img src="assets/kyaruchang.png">
+<div class="wrapper">
+  <img [ngClass]="{'stop': !moving, 'move': moving}" (click)="toggle()" src="assets/kyaruchang.png">
+</div>

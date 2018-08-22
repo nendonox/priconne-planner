@@ -45,6 +45,7 @@ h2 {
 
 .center-column {
   max-width: 1440px;
+  z-index: 100;
 }
 
 .characters {
