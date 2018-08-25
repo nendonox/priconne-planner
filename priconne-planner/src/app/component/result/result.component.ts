@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { CharacterSettings } from '../../model/character-settings.model'
+import { HardSettings } from '../../model/hard-settings.model'
 import { EquipmentService } from '../../service/equipment.service'
 import { Equipment } from '../../model/equipment.model'
 
@@ -11,6 +12,7 @@ import { Equipment } from '../../model/equipment.model'
 export class ResultComponent implements OnInit {
 
   @Input() characterSettingsList: CharacterSettings[]
+  @Input() hardSettingsList: HardSettings[]
   equipmentMap: { string: Equipment }
 
   constructor(private equipmentService: EquipmentService) { }
@@ -54,14 +56,41 @@ export class ResultComponent implements OnInit {
     return ingredientCounts as { string: number }
   }
 
+  calcHardDropCounts(): { string: number } {
+    const counts = {}
+    for (const settings of this.hardSettingsList) {
+      const dropCounts = settings.getDropCounts()
+      for (const drop of Object.keys(dropCounts)) {
+        if (counts.hasOwnProperty(drop)) {
+          counts[drop] += dropCounts[drop]
+        } else {
+          counts[drop] = dropCounts[drop]
+        }
+      }
+    }
+    return counts as { string: number }
+  }
+
+  subtractCounts(countsA, countsB) {
+    for (const key of Object.keys(countsA)) {
+      if (countsB.hasOwnProperty(key)) {
+        countsA[key] -= countsB[key]
+      }
+    }
+    return countsA
+  }
+
   calcSortedIngredients(): object[] {
     const ingredients = []
     const ingredientCounts = this.calcIngredientCounts()
+    this.subtractCounts(ingredientCounts, this.calcHardDropCounts())
     for (const name of Object.keys(ingredientCounts)) {
-      ingredients.push({
-        'equipment': this.equipmentMap[name],
-        'count': ingredientCounts[name]
-      })
+      if (ingredientCounts[name] > 0) {
+        ingredients.push({
+          'equipment': this.equipmentMap[name],
+          'count': ingredientCounts[name]
+        })
+      }
     }
     ingredients.sort((a, b) => b.count - a.count)
     return ingredients

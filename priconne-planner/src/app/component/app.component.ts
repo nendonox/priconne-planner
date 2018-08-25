@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { CharacterSettingsService } from '../service/character-settings.service'
 import { CharacterSettings } from '../model/character-settings.model'
+import { HardSettingsService } from '../service/hard-settings.service'
+import { HardSettings } from '../model/hard-settings.model'
 
 @Component({
   selector: 'app-root',
@@ -9,17 +11,24 @@ import { CharacterSettings } from '../model/character-settings.model'
 export class AppComponent implements OnInit {
 
   characterSettingsList: CharacterSettings[]
+  hardSettingsList: HardSettings[]
 
   constructor(
-    private characterSettingsService: CharacterSettingsService) {
+    private characterSettingsService: CharacterSettingsService,
+    private hardSettingsService: HardSettingsService) {
   }
 
   ngOnInit() {
     this.characterSettingsList = this.characterSettingsService.load()
+    this.hardSettingsList = this.hardSettingsService.load()
   }
 
   save() {
     this.characterSettingsService.save(this.characterSettingsList)
+  }
+
+  saveHard() {
+    this.hardSettingsService.save(this.hardSettingsList)
   }
 
   sortByRank() {

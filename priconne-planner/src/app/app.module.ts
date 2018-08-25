@@ -8,9 +8,13 @@ import { AppComponent } from './component/app.component'
 import { CharacterComponent } from './component/character/character.component'
 import { ResultComponent } from './component/result/result.component'
 import { KyaruchangComponent } from './component/kyaruchang/kyaruchang.component'
+import { HardComponent } from './component/hard/hard.component'
 
 import { CharacterService } from './service/character.service'
 import { CharacterSettingsService } from './service/character-settings.service'
+import { HardService } from './service/hard.service'
+import { HardSettingsService } from './service/hard-settings.service'
+
 import { EquipmentService } from './service/equipment.service'
 
 const appRoutes: Routes = [
@@ -23,7 +27,8 @@ const appRoutes: Routes = [
     AppComponent,
     CharacterComponent,
     ResultComponent,
-    KyaruchangComponent
+    KyaruchangComponent,
+    HardComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,7 @@ const appRoutes: Routes = [
     CharacterService,
     EquipmentService,
     CharacterSettingsService,
+    HardSettingsService
   ],
   bootstrap: [LoaderComponent]
 })

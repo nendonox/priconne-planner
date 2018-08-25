@@ -9,7 +9,8 @@
     <div>
       <h2>必要素材</h2>
       <app-result
-       [characterSettingsList]="characterSettingsList">
+       [characterSettingsList]="characterSettingsList"
+       [hardSettingsList]="hardSettingsList">
       </app-result>
     </div>
     <div>
@@ -23,6 +24,16 @@
            (save)="save()"
            [characterSettings]="characterSettings">
         </app-character>
+      </div>
+    </div>
+    <div>
+      <h2>ハードドロップ</h2>
+      <div class="hards">
+        <app-hard
+           *ngFor="let hardSettings of hardSettingsList"
+           (save)="saveHard()"
+           [hardSettings]="hardSettings">
+        </app-hard>
       </div>
     </div>
   </div>

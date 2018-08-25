@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div>
+    <div class="top-label">
+      <div>{{ hardSettings.hard.prefix }}</div>
+    </div>
+
+    <img [ngClass]="{ 'img-disabled': hardSettings.amount === 0 }" class="character-img" src="{{ getCharacter(hardSettings.hard.piece).getImageUrl() }}">
+    <div class="bottom-label">
+      <div class="bottom-label-inner">
+        <div class="button" (click)="remove($event)">-</div>
+        <div class="amount">x{{ hardSettings.amount }}</div>
+        <div class="button" (click)="add($event)">+</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="drops">
+      <div *ngFor="let drop of hardSettings.hard.drops.slice(0, 3)" class="drops-inner">
+        <img [ngClass]="{ 'img-disabled': hardSettings.amount === 0 }" class="equipment-img" src="{{ getEquipment(drop).getImageUrl() }}">
+      </div>
+      <div class="amount-small">x{{ hardSettings.getDropAmount(0) }}</div>
+    </div>
+    <div class="drops">
+      <div *ngFor="let drop of hardSettings.hard.drops.slice(3)" class="drops-inner">
+        <img [ngClass]="{ 'img-disabled': hardSettings.amount === 0 }" class="equipment-sub-img" src="{{ getEquipment(drop).getImageUrl() }}">
+      </div>
+      <div class="amount-small">x{{ hardSettings.getDropAmount(3) }}</div>
+    </div>
+  </div>
+</div>
