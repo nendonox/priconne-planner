@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, ViewChild } from '@angular/core'
 import { CharacterSettings } from '../../model/character-settings.model'
 import { HardSettings } from '../../model/hard-settings.model'
 import { EquipmentService } from '../../service/equipment.service'
 import { Equipment } from '../../model/equipment.model'
+import { ItemComponent } from '../item/item.component'
 
 @Component({
   selector: 'app-result',
@@ -13,6 +14,8 @@ export class ResultComponent implements OnInit {
 
   @Input() characterSettingsList: CharacterSettings[]
   @Input() hardSettingsList: HardSettings[]
+  @ViewChild(ItemComponent)
+  itemComponent
   equipmentMap: { string: Equipment }
 
   constructor(private equipmentService: EquipmentService) { }
@@ -94,6 +97,10 @@ export class ResultComponent implements OnInit {
     }
     ingredients.sort((a, b) => b.count - a.count)
     return ingredients
+  }
+
+  showItem(equipment) {
+    this.itemComponent.show(equipment)
   }
 
 }

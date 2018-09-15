@@ -4,6 +4,7 @@ import { HardSettings } from '../../model/hard-settings.model'
 import { HardService } from '../../service/hard.service'
 import { EquipmentService } from '../../service/equipment.service'
 import { CharacterService } from '../../service/character.service'
+
 @Component({
   selector: 'app-hard',
   templateUrl: './hard.component.html',

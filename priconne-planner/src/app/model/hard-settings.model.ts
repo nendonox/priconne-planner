@@ -11,7 +11,7 @@ export class HardSettings {
   }
 
   getDropAmount(index) {
-    if (index < 4) {
+    if (index < 3) {
       return Math.floor(this.amount * 1.4)
     } else {
       return Math.floor(this.amount * 0.4)

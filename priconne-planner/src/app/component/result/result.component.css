@@ -8,6 +8,7 @@
 img {
   border-radius: 10px;
   width: 114px;
+  cursor: pointer;
 }
 
 .equipment {
