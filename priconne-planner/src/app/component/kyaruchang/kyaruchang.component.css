@@ -2,14 +2,14 @@
   width: 100%;
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 100px;
   overflow: visible;
   z-index: 20;
 }
 
 .stop {
   position: relative;
-  top: -150px;
+  top: -50px;
   left: 99%;
   transform: translateX(-100%);
   cursor: pointer;
@@ -17,7 +17,7 @@
 
 .move {
   position: relative;
-  top: -150px;
+  top: -50px;
   cursor: pointer;
   animation-duration: 10s;
   animation-name: move-keyframes;
