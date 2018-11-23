@@ -22,7 +22,7 @@ export class CharacterSettingsService {
     if (rawArray) {
       for (const rawValue of rawArray) {
         if (!rawValue.character) { continue }
-        const name = rawValue.character.name
+        const name = rawValue.character.name.replace('ぺ', 'ペ')
         const settings = new CharacterSettings(characterMap[name])
         settings.rank = rawValue.rank
         settings.enabled = rawValue.enabled
