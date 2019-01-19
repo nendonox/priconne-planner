@@ -50,7 +50,6 @@ export class CharacterComponent implements OnInit {
   }
 
   getEquipmentByIndex(index) {
-    console.log(this.characterSettings)
     const name = this.characterSettings.character.equipmentNames[this.characterSettings.rank * 6 + index]
     if (name) {
       return this.equipmentService.equipmentMap[name]

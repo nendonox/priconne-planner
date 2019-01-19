@@ -89,9 +89,8 @@ export class ResultComponent implements OnInit {
     this.subtractCounts(ingredientCounts, this.calcHardDropCounts())
     for (const name of Object.keys(ingredientCounts)) {
       if (ingredientCounts[name] > 0) {
-        if (!this.equipmentMap[name]) { console.log(name) }
         ingredients.push({
-          'equipment': this.equipmentMap[name],
+          'equipment': name,
           'count': ingredientCounts[name]
         })
       }

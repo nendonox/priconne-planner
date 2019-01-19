@@ -18,7 +18,7 @@ export class NormalService {
           this.normals.push(new Normal(
             normal.name,
             normal.prefix + '-' + (i + 1),
-            normal.drops[i]
+            normal.drops[i].map(x => x.replace('(', '（').replace(')', '）'))
           ))
         }
       }

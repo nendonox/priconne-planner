@@ -4,6 +4,8 @@
 /dist
 /tmp
 /out-tsc
+/src/assets/character-images/
+/src/assets/equipment-images/
 
 # dependencies
 /node_modules

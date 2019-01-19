@@ -1,20 +1,20 @@
 <div *ngIf="isShow" class="wrapper" (click)="close($event)">
   <div class="inner">
     <header>
-      <img src="{{ equipment.getImageUrl() }}">
-      <h3>{{ equipment.name }}</h3>
+      <img src="assets/equipment-images/{{ equipment }}.jpg">
+      <h3>{{ equipment }}</h3>
     </header>
     <section>
       <div *ngFor="let normal of getDropNormals()">
         <h4>ノーマル {{ normal.prefix }}</h4>
         <div class="drops">
-          <img *ngFor="let drop of normal.drops" src="{{ getEquipment(drop).getImageUrl() }}">
+          <img *ngFor="let drop of normal.drops" src="assets/equipment-images/{{ drop }}.jpg">
         </div>
       </div>
       <div *ngFor="let hard of getDropHards()">
         <h4>ハード {{ hard.prefix }}</h4>
         <div class="drops">
-          <img *ngFor="let drop of hard.drops" src="{{ getEquipment(drop).getImageUrl() }}">
+          <img *ngFor="let drop of hard.drops" src="assets/equipment-images/{{ drop }}.jpg">
         </div>
       </div>
     </section>

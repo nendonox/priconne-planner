@@ -12,7 +12,7 @@ import { EquipmentService } from '../../service/equipment.service'
 export class ItemComponent implements OnInit {
 
   isShow = false
-  equipment = {} as Equipment
+  equipment: string
 
   constructor(
     private hardService: HardService,
@@ -36,18 +36,13 @@ export class ItemComponent implements OnInit {
 
   getDropNormals() {
     return this.normalService.normals.filter(normal => {
-      return normal.drops.indexOf(this.equipment.name) >= 0
+      return normal.drops.indexOf(this.equipment) >= 0
     })
   }
 
   getDropHards() {
     return this.hardService.hards.filter(hard => {
-      return hard.drops.indexOf(this.equipment.name) >= 0
+      return hard.drops.indexOf(this.equipment) >= 0
     })
   }
-
-  getEquipment(name) {
-    return this.equipmentService.equipmentMap[name]
-  }
-
 }

@@ -16,9 +16,9 @@ export class HardService {
       this.hards = Object.values(hards).map(hard => {
         return new Hard(
           hard.name,
-          hard.prefix,
+          hard.prefix.split('(')[0],
           hard.piece,
-          hard.drops
+          hard.drops.map(x => x.replace('(', '（').replace(')', '）'))
         )
       })
       finished()

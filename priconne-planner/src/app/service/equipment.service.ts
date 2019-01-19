@@ -28,6 +28,6 @@ export class EquipmentService {
   }
 
   getEmpty() {
-    return new Equipment('装備なし', new Map(), new Map())
+    return new Equipment('不明', new Map(), new Map())
   }
 }
