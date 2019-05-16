@@ -29,7 +29,7 @@ export class ItemComponent implements OnInit {
   }
 
   close(event) {
-    if (event.toElement.className === 'wrapper') {
+    if (event.target.className === 'wrapper') {
       this.isShow = false
     }
   }
